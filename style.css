@@ -1,0 +1,33 @@
+
+h1 {
+    text-align: center;
+}
+
+.calculator {
+    box-sizing: border-box;
+    width: 400px;
+    height: 600px;
+    margin: 0 auto;
+    padding: 8px;
+    border: solid 2px black;
+
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.display {
+    border: solid 2px black;
+    flex: 1;
+}
+
+.button-container {
+    border: solid 2px black;
+    flex-grow: 5;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.button {
+
+}
