@@ -23,11 +23,17 @@ h1 {
 
 .button-container {
     border: solid 2px black;
-    flex-grow: 5;
-    display: flex;
-    flex-wrap: wrap;
+    padding: 8px;
+    flex: 5;
+    display: grid;
+    grid-template: repeat(5, 1fr) / repeat(4, 1fr); 
 }
 
 .button {
+    margin: 8px;
+    border: solid 2px black;
+}
 
+.long-button {
+    grid-column: auto / span 2;
 }
