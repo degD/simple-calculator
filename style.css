@@ -47,3 +47,7 @@ h1 {
 .long-button {
     grid-column: auto / span 2;
 }
+
+.button:active {
+    border: groove 4px black;
+}
