@@ -9,6 +9,7 @@ let num2 = 0;
 let numBuffer = [];
 let numSign = "+";
 let currentOperation = "+";
+let clearBuffer = false;
 
 // add event listeners to buttons to capture button clicks
 calculatorButtons.forEach(button => {
@@ -35,7 +36,9 @@ function calculatorButtonEvaluator(button) {
     }
     else if (Number.isInteger(+buttonText) || buttonText == ".") {
         // if pressed a digit button or the point button
-        if (numBuffer.length == 0) {
+        if (clearBuffer) {
+            numBuffer = [];
+            clearBuffer = false;
             updateDisplay();
         }
         numBuffer.push(buttonText);
@@ -46,9 +49,21 @@ function calculatorButtonEvaluator(button) {
         num1 = doMathOperation();
         num2 = 0;
         currentOperation = buttonText;
-        numBuffer = [];
+        clearBuffer = true;
         updateDisplay(num1);
         console.log(num1, num2, currentOperation);
+    }
+    else if (buttonText == "+/-") {
+        // change sign of the number
+        if (numSign == "+") {
+            numBuffer.splice(0, 0, "-");
+            numSign = "-";
+        } else {
+            numBuffer.splice(0, 1);
+            numSign = "+";
+        }
+        clearBuffer = false;
+        updateDisplay(numBuffer.join(""));
     }
 }
 
