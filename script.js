@@ -45,8 +45,11 @@ function calculatorButtonEvaluator(button) {
             clearBuffer = false;
             updateDisplay();
         }
-        numBuffer.push(buttonText);
-        updateDisplay(numBuffer.join(""));
+        if (buttonText != "." || countItems(numBuffer, ".") < 1) {
+            // prevent more then one point in a number
+            numBuffer.push(buttonText);
+            updateDisplay(numBuffer.join(""));
+        }
     } 
     else if (operators.includes(buttonText)) {
         num2 = +numBuffer.join("");
@@ -96,4 +99,14 @@ function doMathOperation() {
 
 function updateDisplay(newText) {
     calculatorDisplay.textContent = newText;
+}
+
+function countItems(arr, item) {
+    let count = 0;
+    for (const i of arr) {
+        if (i == item) {
+            count++;
+        }
+    }
+    return count;
 }
