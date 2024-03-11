@@ -34,6 +34,10 @@ function calculatorButtonEvaluator(button) {
         currentOperation = "+";
         updateDisplay();
     }
+    else if (buttonText == "CE") {
+        numBuffer.pop();
+        updateDisplay(numBuffer.join(""));
+    }
     else if (Number.isInteger(+buttonText) || buttonText == ".") {
         // if pressed a digit button or the point button
         if (clearBuffer) {
