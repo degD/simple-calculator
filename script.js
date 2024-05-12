@@ -32,7 +32,7 @@ function calculatorButtonEvaluator(button) {
         numBuffer = [];
         numSign = "+";
         currentOperation = "+";
-        updateDisplay();
+        updateDisplay("_");
     }
     else if (buttonText == "CE") {
         numBuffer.pop();
@@ -44,6 +44,9 @@ function calculatorButtonEvaluator(button) {
             numBuffer = [];
             clearBuffer = false;
             updateDisplay();
+        }
+        if (numBuffer.at(0) == "0" && numBuffer.at(1) != "." && buttonText != ".") {
+            numBuffer.splice(0, 1);
         }
         if (buttonText != "." || countItems(numBuffer, ".") < 1) {
             // prevent more then one point in a number

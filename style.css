@@ -1,5 +1,10 @@
 
+body {
+    background-color: grey;
+}
+
 h1 {
+    color: white;
     text-align: center;
 }
 
@@ -9,39 +14,48 @@ h1 {
     height: 600px;
     margin: 0 auto;
     padding: 8px;
-    border: solid 2px black;
+    border: outset 10px darkgrey;
 
     display: flex;
     flex-direction: column;
     gap: 8px;
+
+    background-color: darkorange;
 }
 
 .display {
-    border: solid 2px black;
+    border: inset 8px darkgrey;
+    padding-left: 20px;
     flex: 1;
 
     display: flex;
-    justify-content: center;
     align-items: center;
     font-size: 30px;
+
+    background-color: black;
+    color: white;
 }
 
 .button-container {
-    border: solid 2px black;
+    border: inset 8px darkgrey;
     padding: 8px;
     flex: 5;
     display: grid;
     grid-template: repeat(5, 1fr) / repeat(4, 1fr); 
+
+    background-color: rgb(61, 61, 61);
 }
 
 .button {
     margin: 8px;
-    border: solid 2px black;
+    border: solid 2px darkgrey;
 
     display: flex;
     justify-content: center;
     align-items: center;
     font-size: 30px;
+
+    background-color: darkorange;
 }
 
 .long-button {
